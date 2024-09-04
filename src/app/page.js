@@ -6,7 +6,7 @@ import React from 'react'
 
 // Lay du lieu tu API
 const getData = async () => {
-  const res = await fetch(`${process.env.URL_DEPLOY}/api/blog`, { next: { revalidate: 3600 } });
+  const res = await fetch(`/api/blog`, { next: { revalidate: 3600 } });
 
   if(!res.ok) {
     throw new Error("Databse Error!")
