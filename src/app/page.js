@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 // Lay du lieu tu API
 const getData = async () => {
-  const res = await fetch('https://deploy-crud-next.vercel.app/api/blog', { next: { revalidate: 3600 } });
+  const res = await fetch('https://deploy-crud-next-er62.vercel.app/api/blog', { next: { revalidate: 3600 } });
 
   if(!res.ok) {
     throw new Error("Databse Error!")
