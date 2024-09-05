@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 // Lay du lieu tu API
 const getData = async () => {
-  // const res = await fetch('https://deploy-next-mongo.vercel.app/api/blog', { next: { revalidate: 3600 } });
-  const res = await fetch('http://localhost:3001/api/blog', { next: { revalidate: 3600 } });
+  const res = await fetch('https://deploy-next-mongo.vercel.app/api/blog', { next: { revalidate: 3600 } });
+  // const res = await fetch('http://localhost:3001/api/blog', { next: { revalidate: 3600 } });
 
   if (!res.ok) {
     throw new Error("Databse Error!")

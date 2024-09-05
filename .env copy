@@ -1,1 +1,1 @@
-MONGO=mongodb+srv://userWeb39:LfNCJWYA8mThvdGp@cluster0.ad0a2.mongodb.net/dbWeb39?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI=mongodb+srv://userWeb39:LfNCJWYA8mThvdGp@cluster0.ad0a2.mongodb.net/dbWeb39?retryWrites=true&w=majority&appName=Cluster0
