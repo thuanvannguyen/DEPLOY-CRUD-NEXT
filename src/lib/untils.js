@@ -1,17 +1,29 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const connection = {};
+const connection = {}; // Store the connection state
 
 export const connectToDb = async () => {
   try {
-    if(connection.isConnected) {
+    // Check if already connected
+    if (connection.isConnected) {
       console.log("Using existing connection");
       return;
     }
-    const db = await mongoose.connect(process.env.MONGO);
+
+    // Connect to the database
+    const db = await mongoose.connect(process.env.MONGO, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
     connection.isConnected = db.connections[0].readyState;
+
+    if (connection.isConnected) {
+      console.log("MongoDB connected successfully");
+    }
+
   } catch (error) {
-    console.log(error);
-    throw new Error(error);
+    console.error("Database connection error:", error.message);
+    throw new Error("Failed to connect to the database");
   }
 };
