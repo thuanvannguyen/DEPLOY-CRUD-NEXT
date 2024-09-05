@@ -1,8 +1,6 @@
 import Banner from '@/components/project/Banner'
-import { getPosts } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
 // Lay du lieu tu API
 const getData = async () => {
