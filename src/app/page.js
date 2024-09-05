@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 // Lay du lieu tu API
 const getData = async () => {
-  const res = await fetch('https://deploy-next-mongo.vercel.app/api/blog', { next: { revalidate: 3600 } });
-  // const res = await fetch('http://localhost:3001/api/blog', { next: { revalidate: 3600 } });
+  // const res = await fetch('https://deploy-next-mongo.vercel.app/api/blog', { next: { revalidate: 3600 } });
+  const res = await fetch('http://localhost:3001/api/blog', { next: { revalidate: 3600 } });
 
   if (!res.ok) {
     throw new Error("Databse Error!")
@@ -31,7 +31,6 @@ const Home = async () => {
         <div className="container px-4 px-lg-5 mt-5">
           <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             {(posts.length > 0) && posts.map((value) => {
-              console.log(value);
               return (
                 <div className="col mb-5" key={value.id}>
                   <div className="card h-100">
